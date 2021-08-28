@@ -1,0 +1,113 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "a",
+					"strict" : false
+				},
+				{
+					"name" : "b",
+					"strict" : false
+				},
+				{
+					"name" : "c",
+					"strict" : false
+				},
+				{
+					"name" : "d",
+					"strict" : false
+				},
+				{
+					"name" : "e",
+					"strict" : false
+				},
+				{
+					"name" : "f",
+					"strict" : false
+				},
+				{
+					"name" : "g",
+					"strict" : false
+				},
+				{
+					"name" : "scl",
+					"strict" : false
+				},
+				{
+					"name" : "ponto",
+					"strict" : false
+				},
+				{
+					"name" : "D1_Anodo",
+					"strict" : false
+				},
+				{
+					"name" : "D2_Anodo",
+					"strict" : false
+				},
+				{
+					"name" : "D3_Anodo",
+					"strict" : false
+				},
+				{
+					"name" : "D4_Anodo",
+					"strict" : false
+				},
+				{
+					"name" : "Rs",
+					"strict" : false
+				},
+				{
+					"name" : "Db0",
+					"strict" : false
+				},
+				{
+					"name" : "Db1",
+					"strict" : false
+				},
+				{
+					"name" : "Db2",
+					"strict" : false
+				},
+				{
+					"name" : "Db3",
+					"strict" : false
+				},
+				{
+					"name" : "Db4",
+					"strict" : false
+				},
+				{
+					"name" : "Db5",
+					"strict" : false
+				},
+				{
+					"name" : "Db6",
+					"strict" : false
+				},
+				{
+					"name" : "Db7",
+					"strict" : false
+				},
+				{
+					"name" : "buzzer",
+					"strict" : false
+				},
+				{
+					"name" : "sda",
+					"strict" : false
+				},
+				{
+					"name" : "E_pin",
+					"strict" : false
+				},
+				{
+					"name" : "clock_50Mhz",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

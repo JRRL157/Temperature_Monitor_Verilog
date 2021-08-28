@@ -1,0 +1,243 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/GitHub/Temperature_Monitor/simulation/qsim
+vanode_control
+Z1 !s110 1629923572
+!i10b 1
+!s100 aaYPm3W9ablIhb6AkAMEN3
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IojBC=:Pa]BT4D3?2LeXa<3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1629923571
+Z4 8Temperature_Monitor.vo
+Z5 FTemperature_Monitor.vo
+!i122 40
+L0 32 168
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1629923572.000000
+Z8 !s107 Temperature_Monitor.vo|
+Z9 !s90 -work|work|Temperature_Monitor.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vanode_control_vlg_vec_tst
+R1
+!i10b 1
+!s100 fkC`FQlhMJNzZ72MLc>5R1
+R2
+I`A7>Dg@:0im;>P3^gz:^P2
+R3
+R0
+w1629923570
+8Waveform5.vwf.vt
+FWaveform5.vwf.vt
+!i122 41
+L0 30 32
+R6
+r1
+!s85 0
+31
+R7
+!s107 Waveform5.vwf.vt|
+!s90 -work|work|Waveform5.vwf.vt|
+!i113 1
+R10
+R11
+vcontador
+Z12 !s110 1629917432
+!i10b 1
+!s100 hgZYZD>?^zII>S:2SXGVb2
+R2
+INFKT_^DFSG;OhQ[Rb2[=G0
+R3
+R0
+w1629917431
+R4
+R5
+!i122 12
+L0 32 597
+R6
+r1
+!s85 0
+31
+Z13 !s108 1629917432.000000
+R8
+R9
+!i113 1
+R10
+R11
+vcontador_vlg_vec_tst
+R12
+!i10b 1
+!s100 lSKRMJMoOaPKOLm?]PMek3
+R2
+IIlbU0k]PW:IaY^XcdLU0R1
+R3
+R0
+w1629917430
+8Waveform1.vwf.vt
+FWaveform1.vwf.vt
+!i122 13
+Z14 L0 30 26
+R6
+r1
+!s85 0
+31
+R13
+!s107 Waveform1.vwf.vt|
+!s90 -work|work|Waveform1.vwf.vt|
+!i113 1
+R10
+R11
+vrefresh_clock_10kHz
+Z15 !s110 1629918358
+!i10b 1
+!s100 >6gX_6cHVL=0j;]oZSaV92
+R2
+IF^R5mRGk[cf@jgEEaLPcg2
+R3
+R0
+w1629918357
+R4
+R5
+!i122 26
+L0 32 461
+R6
+r1
+!s85 0
+31
+Z16 !s108 1629918358.000000
+R8
+R9
+!i113 1
+R10
+R11
+nrefresh_clock_10k@hz
+vrefresh_clock_10kHz_vlg_vec_tst
+R15
+!i10b 1
+!s100 H2;lWfl_PbAM;aGL>ISkD0
+R2
+IQ6CBhPEf<ZQgC[DoP41]k1
+R3
+R0
+w1629918356
+8Waveform2.vwf.vt
+FWaveform2.vwf.vt
+!i122 27
+R14
+R6
+r1
+!s85 0
+31
+R16
+!s107 Waveform2.vwf.vt|
+!s90 -work|work|Waveform2.vwf.vt|
+!i113 1
+R10
+R11
+nrefresh_clock_10k@hz_vlg_vec_tst
+vrefresh_counter
+Z17 !s110 1629919696
+!i10b 1
+!s100 cjkGz;RHKHnV@Q]o>VUMT3
+R2
+I57<m3^GkzB0a8kV0nMh?;0
+R3
+R0
+w1629919696
+R4
+R5
+!i122 30
+L0 32 132
+R6
+r1
+!s85 0
+31
+Z18 !s108 1629919696.000000
+R8
+R9
+!i113 1
+R10
+R11
+vrefresh_counter_vlg_vec_tst
+R17
+!i10b 1
+!s100 JWe8o6_j8bM>@AKzV_fC[1
+R2
+I3W4>T=fA0iVS2H^^L1ego2
+R3
+R0
+w1629919695
+8Waveform3.vwf.vt
+FWaveform3.vwf.vt
+!i122 31
+R14
+R6
+r1
+!s85 0
+31
+R18
+!s107 Waveform3.vwf.vt|
+!s90 -work|work|Waveform3.vwf.vt|
+!i113 1
+R10
+R11
+vsegments_controller
+Z19 !s110 1629935260
+!i10b 1
+!s100 <mY29e2KnZm8M[=6PKk;13
+R2
+IebBz^oGJVJgSLh`ZN^YVU1
+R3
+R0
+Z20 w1629935259
+R4
+R5
+!i122 48
+L0 32 1025
+R6
+r1
+!s85 0
+31
+Z21 !s108 1629935260.000000
+R8
+R9
+!i113 1
+R10
+R11
+vsegments_controller_vlg_vec_tst
+R19
+!i10b 1
+!s100 cd0hVO]KKfSNg0L;<88kF2
+R2
+IgcJ=e^9m5=[z;8OOAc4Mj3
+R3
+R0
+R20
+8Waveform7.vwf.vt
+FWaveform7.vwf.vt
+!i122 49
+L0 30 98
+R6
+r1
+!s85 0
+31
+R21
+!s107 Waveform7.vwf.vt|
+!s90 -work|work|Waveform7.vwf.vt|
+!i113 1
+R10
+R11

@@ -1,0 +1,149 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'lm75:inst7|I2C_READ:I2C_READ|data_r[10]'
+Slack : -15.800
+TNS   : -108.125
+
+Type  : Slow 1200mV 85C Model Setup 'clock_50Mhz'
+Slack : -7.390
+TNS   : -585.422
+
+Type  : Slow 1200mV 85C Model Setup 'segments_controller:inst|refresh_clock_10kHz:inst|clock'
+Slack : -1.000
+TNS   : -1.000
+
+Type  : Slow 1200mV 85C Model Setup 'lcd:inst8|E'
+Slack : -0.404
+TNS   : -7.059
+
+Type  : Slow 1200mV 85C Model Hold 'clock_50Mhz'
+Slack : 0.434
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'segments_controller:inst|refresh_clock_10kHz:inst|clock'
+Slack : 0.497
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'lcd:inst8|E'
+Slack : 0.500
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'lm75:inst7|I2C_READ:I2C_READ|data_r[10]'
+Slack : 0.578
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lm75:inst7|I2C_READ:I2C_READ|data_r[10]'
+Slack : -3.300
+TNS   : -341.540
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clock_50Mhz'
+Slack : -3.000
+TNS   : -205.232
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'lcd:inst8|E'
+Slack : -1.487
+TNS   : -71.376
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'segments_controller:inst|refresh_clock_10kHz:inst|clock'
+Slack : -1.487
+TNS   : -2.974
+
+Type  : Slow 1200mV 0C Model Setup 'lm75:inst7|I2C_READ:I2C_READ|data_r[10]'
+Slack : -15.142
+TNS   : -103.619
+
+Type  : Slow 1200mV 0C Model Setup 'clock_50Mhz'
+Slack : -6.784
+TNS   : -535.527
+
+Type  : Slow 1200mV 0C Model Setup 'segments_controller:inst|refresh_clock_10kHz:inst|clock'
+Slack : -0.818
+TNS   : -0.818
+
+Type  : Slow 1200mV 0C Model Setup 'lcd:inst8|E'
+Slack : -0.281
+TNS   : -4.187
+
+Type  : Slow 1200mV 0C Model Hold 'clock_50Mhz'
+Slack : 0.385
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'segments_controller:inst|refresh_clock_10kHz:inst|clock'
+Slack : 0.445
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'lcd:inst8|E'
+Slack : 0.469
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'lm75:inst7|I2C_READ:I2C_READ|data_r[10]'
+Slack : 0.546
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lm75:inst7|I2C_READ:I2C_READ|data_r[10]'
+Slack : -3.060
+TNS   : -304.022
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clock_50Mhz'
+Slack : -3.000
+TNS   : -205.232
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'lcd:inst8|E'
+Slack : -1.487
+TNS   : -71.376
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'segments_controller:inst|refresh_clock_10kHz:inst|clock'
+Slack : -1.487
+TNS   : -2.974
+
+Type  : Fast 1200mV 0C Model Setup 'lm75:inst7|I2C_READ:I2C_READ|data_r[10]'
+Slack : -6.778
+TNS   : -46.302
+
+Type  : Fast 1200mV 0C Model Setup 'clock_50Mhz'
+Slack : -2.646
+TNS   : -182.152
+
+Type  : Fast 1200mV 0C Model Setup 'segments_controller:inst|refresh_clock_10kHz:inst|clock'
+Slack : 0.159
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'lcd:inst8|E'
+Slack : 0.392
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'lm75:inst7|I2C_READ:I2C_READ|data_r[10]'
+Slack : 0.100
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'clock_50Mhz'
+Slack : 0.179
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'lcd:inst8|E'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'segments_controller:inst|refresh_clock_10kHz:inst|clock'
+Slack : 0.208
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clock_50Mhz'
+Slack : -3.000
+TNS   : -147.507
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lm75:inst7|I2C_READ:I2C_READ|data_r[10]'
+Slack : -1.129
+TNS   : -97.519
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'lcd:inst8|E'
+Slack : -1.000
+TNS   : -48.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'segments_controller:inst|refresh_clock_10kHz:inst|clock'
+Slack : -1.000
+TNS   : -2.000
+
+------------------------------------------------------------

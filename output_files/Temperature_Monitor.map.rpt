@@ -1,0 +1,859 @@
+Analysis & Synthesis report for Temperature_Monitor
+Sat Aug 28 19:08:47 2021
+Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |test|lcd:inst8|pr_state
+  9. State Machine - |test|lm75:inst7|I2C_READ:I2C_READ|state
+ 10. State Machine - |test|lm75:inst7|I2C_READ:I2C_READ|cnt
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Parameter Settings for User Entity Instance: lm75:inst7|I2C_READ:I2C_READ
+ 16. Parameter Settings for User Entity Instance: lcd:inst8
+ 17. Parameter Settings for Inferred Entity Instance: lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0
+ 18. Parameter Settings for Inferred Entity Instance: lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod1
+ 19. Parameter Settings for Inferred Entity Instance: lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod0
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Aug 28 19:08:47 2021       ;
+; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                      ; Temperature_Monitor                         ;
+; Top-level Entity Name              ; test                                        ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 443                                         ;
+;     Total combinational functions  ; 397                                         ;
+;     Dedicated logic registers      ; 186                                         ;
+; Total registers                    ; 186                                         ;
+; Total pins                         ; 27                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                               ;
++------------------------------------------------------------------+--------------------+---------------------+
+; Option                                                           ; Setting            ; Default Value       ;
++------------------------------------------------------------------+--------------------+---------------------+
+; Device                                                           ; EP4CE6E22C8        ;                     ;
+; Top-level entity name                                            ; test               ; Temperature_Monitor ;
+; Family name                                                      ; Cyclone IV E       ; Cyclone V           ;
+; Use smart compilation                                            ; Off                ; Off                 ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                  ;
+; Enable compact report table                                      ; Off                ; Off                 ;
+; Restructure Multiplexers                                         ; Auto               ; Auto                ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                 ;
+; Preserve fewer node names                                        ; On                 ; On                  ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable              ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001        ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993           ;
+; State Machine Processing                                         ; Auto               ; Auto                ;
+; Safe State Machine                                               ; Off                ; Off                 ;
+; Extract Verilog State Machines                                   ; On                 ; On                  ;
+; Extract VHDL State Machines                                      ; On                 ; On                  ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                 ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000                ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                 ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                  ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                  ;
+; Parallel Synthesis                                               ; On                 ; On                  ;
+; DSP Block Balancing                                              ; Auto               ; Auto                ;
+; NOT Gate Push-Back                                               ; On                 ; On                  ;
+; Power-Up Don't Care                                              ; On                 ; On                  ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                 ;
+; Remove Duplicate Registers                                       ; On                 ; On                  ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                 ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                 ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                 ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                 ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                 ;
+; Ignore SOFT Buffers                                              ; On                 ; On                  ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                 ;
+; Optimization Technique                                           ; Balanced           ; Balanced            ;
+; Carry Chain Length                                               ; 70                 ; 70                  ;
+; Auto Carry Chains                                                ; On                 ; On                  ;
+; Auto Open-Drain Pins                                             ; On                 ; On                  ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                 ;
+; Auto ROM Replacement                                             ; On                 ; On                  ;
+; Auto RAM Replacement                                             ; On                 ; On                  ;
+; Auto DSP Block Replacement                                       ; On                 ; On                  ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto                ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto                ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                  ;
+; Strict RAM Replacement                                           ; Off                ; Off                 ;
+; Allow Synchronous Control Signals                                ; On                 ; On                  ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                 ;
+; Auto RAM Block Balancing                                         ; On                 ; On                  ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                 ;
+; Auto Resource Sharing                                            ; Off                ; Off                 ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                 ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                 ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                 ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                  ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                 ;
+; Timing-Driven Synthesis                                          ; On                 ; On                  ;
+; Report Parameter Settings                                        ; On                 ; On                  ;
+; Report Source Assignments                                        ; On                 ; On                  ;
+; Report Connectivity Checks                                       ; On                 ; On                  ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                 ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                   ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation  ;
+; HDL message level                                                ; Level2             ; Level2              ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                 ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000                ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000                ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                 ;
+; Clock MUX Protection                                             ; On                 ; On                  ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                 ;
+; Block Design Naming                                              ; Auto               ; Auto                ;
+; SDC constraint protection                                        ; Off                ; Off                 ;
+; Synthesis Effort                                                 ; Auto               ; Auto                ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                  ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                 ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium              ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto                ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                  ;
++------------------------------------------------------------------+--------------------+---------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                         ; Library ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+---------+
+; refresh_clock_10kHz.v            ; yes             ; User Verilog HDL File              ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_clock_10kHz.v      ;         ;
+; refresh_counter.v                ; yes             ; User Verilog HDL File              ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_counter.v          ;         ;
+; anode_control.v                  ; yes             ; User Verilog HDL File              ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/anode_control.v            ;         ;
+; bcd_control.v                    ; yes             ; User Verilog HDL File              ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_control.v              ;         ;
+; bcd_7seg.v                       ; yes             ; User Verilog HDL File              ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v                 ;         ;
+; segments_controller.bdf          ; yes             ; User Block Diagram/Schematic File  ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/segments_controller.bdf    ;         ;
+; test.bdf                         ; yes             ; User Block Diagram/Schematic File  ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/test.bdf                   ;         ;
+; I2C_READ.v                       ; yes             ; User Verilog HDL File              ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/I2C_READ.v                 ;         ;
+; lm75.v                           ; yes             ; User Verilog HDL File              ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lm75.v                     ;         ;
+; SEG_D.v                          ; yes             ; User Verilog HDL File              ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v                    ;         ;
+; lcd.vhd                          ; yes             ; User VHDL File                     ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd.vhd                    ;         ;
+; lcd_controller.v                 ; yes             ; User Verilog HDL File              ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v           ;         ;
+; buzzer_controller.v              ; yes             ; User Verilog HDL File              ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v        ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                       ; g:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf                ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                       ; g:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc               ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                       ; g:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc           ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                       ; g:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                ;         ;
+; db/lpm_divide_hhm.tdf            ; yes             ; Auto-Generated Megafunction        ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/lpm_divide_hhm.tdf      ;         ;
+; db/sign_div_unsign_9kh.tdf       ; yes             ; Auto-Generated Megafunction        ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/sign_div_unsign_9kh.tdf ;         ;
+; db/alt_u_div_64f.tdf             ; yes             ; Auto-Generated Megafunction        ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/alt_u_div_64f.tdf       ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/add_sub_7pc.tdf         ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/add_sub_8pc.tdf         ;         ;
+; db/lpm_divide_k9m.tdf            ; yes             ; Auto-Generated Megafunction        ; D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/lpm_divide_k9m.tdf      ;         ;
++----------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                     ;
++---------------------------------------------+-------------------+
+; Resource                                    ; Usage             ;
++---------------------------------------------+-------------------+
+; Estimated Total logic elements              ; 443               ;
+;                                             ;                   ;
+; Total combinational functions               ; 397               ;
+; Logic element usage by number of LUT inputs ;                   ;
+;     -- 4 input functions                    ; 150               ;
+;     -- 3 input functions                    ; 47                ;
+;     -- <=2 input functions                  ; 200               ;
+;                                             ;                   ;
+; Logic elements by mode                      ;                   ;
+;     -- normal mode                          ; 268               ;
+;     -- arithmetic mode                      ; 129               ;
+;                                             ;                   ;
+; Total registers                             ; 186               ;
+;     -- Dedicated logic registers            ; 186               ;
+;     -- I/O registers                        ; 0                 ;
+;                                             ;                   ;
+; I/O pins                                    ; 27                ;
+;                                             ;                   ;
+; Embedded Multiplier 9-bit elements          ; 0                 ;
+;                                             ;                   ;
+; Maximum fan-out node                        ; clock_50Mhz~input ;
+; Maximum fan-out                             ; 136               ;
+; Total fan-out                               ; 1578              ;
+; Average fan-out                             ; 2.47              ;
++---------------------------------------------+-------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                          ; Entity Name         ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |test                                        ; 397 (0)             ; 186 (0)                   ; 0           ; 0            ; 0       ; 0         ; 27   ; 0            ; |test                                                                                                                        ; test                ; work         ;
+;    |buzzer_controller:instX|                 ; 107 (107)           ; 54 (54)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|buzzer_controller:instX                                                                                                ; buzzer_controller   ; work         ;
+;    |lcd:inst8|                               ; 63 (63)             ; 62 (62)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lcd:inst8                                                                                                              ; lcd                 ; work         ;
+;    |lm75:inst7|                              ; 178 (0)             ; 57 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7                                                                                                             ; lm75                ; work         ;
+;       |I2C_READ:I2C_READ|                    ; 112 (112)           ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|I2C_READ:I2C_READ                                                                                           ; I2C_READ            ; work         ;
+;       |SEG_D:SEG_D|                          ; 66 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D                                                                                                 ; SEG_D               ; work         ;
+;          |lpm_divide:Div0|                   ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_hhm:auto_generated|  ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0|lpm_divide_hhm:auto_generated                                                   ; lpm_divide_hhm      ; work         ;
+;                |sign_div_unsign_9kh:divider| ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0|lpm_divide_hhm:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;                   |alt_u_div_64f:divider|    ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0|lpm_divide_hhm:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider ; alt_u_div_64f       ; work         ;
+;          |lpm_divide:Mod0|                   ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_k9m:auto_generated|  ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod0|lpm_divide_k9m:auto_generated                                                   ; lpm_divide_k9m      ; work         ;
+;                |sign_div_unsign_9kh:divider| ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
+;                   |alt_u_div_64f:divider|    ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider ; alt_u_div_64f       ; work         ;
+;    |segments_controller:inst|                ; 49 (0)              ; 13 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst                                                                                               ; segments_controller ; work         ;
+;       |anode_control:inst2|                  ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst|anode_control:inst2                                                                           ; anode_control       ; work         ;
+;       |bcd_7seg:inst5|                       ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst|bcd_7seg:inst5                                                                                ; bcd_7seg            ; work         ;
+;       |bcd_control:inst3|                    ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst|bcd_control:inst3                                                                             ; bcd_control         ; work         ;
+;       |refresh_clock_10kHz:inst|             ; 21 (21)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst|refresh_clock_10kHz:inst                                                                      ; refresh_clock_10kHz ; work         ;
+;       |refresh_counter:inst1|                ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst|refresh_counter:inst1                                                                         ; refresh_counter     ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |test|lcd:inst8|pr_state                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ;
++-------------------------+---------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+--------------------+-------------------------+-----------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+; Name                    ; pr_state.ReturnHome ; pr_state.SetAddress1 ; pr_state.WriteData16 ; pr_state.WriteData15 ; pr_state.WriteData14 ; pr_state.WriteData13 ; pr_state.WriteData12 ; pr_state.WriteData11 ; pr_state.WriteData10 ; pr_state.WriteData9 ; pr_state.WriteData8 ; pr_state.WriteData7 ; pr_state.WriteData6 ; pr_state.WriteData5 ; pr_state.WriteData4 ; pr_state.WriteData3 ; pr_state.WriteData2 ; pr_state.WriteDatal ; pr_state.EntryMode ; pr_state.DisplayControl ; pr_state.ClearDisplay ; pr_state.FunctionSet27 ; pr_state.FunctionSet26 ; pr_state.FunctionSet25 ; pr_state.FunctionSet24 ; pr_state.FunctionSet23 ; pr_state.FunctionSet22 ; pr_state.FunctionSet21 ; pr_state.FunctionSet20 ; pr_state.FunctionSet19 ; pr_state.FunctionSet18 ; pr_state.FunctionSet17 ; pr_state.FunctionSet16 ; pr_state.FunctionSet15 ; pr_state.FunctionSet14 ; pr_state.FunctionSet13 ; pr_state.FunctionSet12 ; pr_state.FunctionSet11 ; pr_state.FunctionSet10 ; pr_state.FunctionSet9 ; pr_state.FunctionSet8 ; pr_state.FunctionSet7 ; pr_state.FunctionSet6 ; pr_state.FunctionSet5 ; pr_state.FunctionSet4 ; pr_state.FunctionSet3 ; pr_state.FunctionSet2 ; pr_state.FunctionSetl ;
++-------------------------+---------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+--------------------+-------------------------+-----------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+; pr_state.FunctionSetl   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ;
+; pr_state.FunctionSet2   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 1                     ;
+; pr_state.FunctionSet3   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet4   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet5   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet6   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet7   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet8   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet9   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet10  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet11  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet12  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet13  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet14  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet15  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet16  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet17  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet18  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet19  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet20  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet21  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet22  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet23  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet24  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet25  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet26  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.FunctionSet27  ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 1                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.ClearDisplay   ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 1                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.DisplayControl ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 1                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.EntryMode      ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteDatal     ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData2     ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData3     ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData4     ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData5     ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData6     ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData7     ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData8     ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData9     ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData10    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData11    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData12    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData13    ; 0                   ; 0                    ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData14    ; 0                   ; 0                    ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData15    ; 0                   ; 0                    ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.WriteData16    ; 0                   ; 0                    ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.SetAddress1    ; 0                   ; 1                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
+; pr_state.ReturnHome     ; 1                   ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                    ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                   ; 0                  ; 0                       ; 0                     ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                      ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 0                     ; 1                     ;
++-------------------------+---------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+----------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+---------------------+--------------------+-------------------------+-----------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+------------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+-----------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |test|lm75:inst7|I2C_READ:I2C_READ|state                                                                                 ;
++---------------+------------+------------+------------+-------------+------------+-------------+------------+---------------+-------------+
+; Name          ; state.IDLE ; state.STOP ; state.NACK ; state.READ2 ; state.ACK2 ; state.READ1 ; state.ACK1 ; state.ADDRESS ; state.START ;
++---------------+------------+------------+------------+-------------+------------+-------------+------------+---------------+-------------+
+; state.IDLE    ; 0          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0             ; 0           ;
+; state.START   ; 1          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0             ; 1           ;
+; state.ADDRESS ; 1          ; 0          ; 0          ; 0           ; 0          ; 0           ; 0          ; 1             ; 0           ;
+; state.ACK1    ; 1          ; 0          ; 0          ; 0           ; 0          ; 0           ; 1          ; 0             ; 0           ;
+; state.READ1   ; 1          ; 0          ; 0          ; 0           ; 0          ; 1           ; 0          ; 0             ; 0           ;
+; state.ACK2    ; 1          ; 0          ; 0          ; 0           ; 1          ; 0           ; 0          ; 0             ; 0           ;
+; state.READ2   ; 1          ; 0          ; 0          ; 1           ; 0          ; 0           ; 0          ; 0             ; 0           ;
+; state.NACK    ; 1          ; 0          ; 1          ; 0           ; 0          ; 0           ; 0          ; 0             ; 0           ;
+; state.STOP    ; 1          ; 1          ; 0          ; 0           ; 0          ; 0           ; 0          ; 0             ; 0           ;
++---------------+------------+------------+------------+-------------+------------+-------------+------------+---------------+-------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------+
+; State Machine - |test|lm75:inst7|I2C_READ:I2C_READ|cnt    ;
++---------+---------+---------+---------+---------+---------+
+; Name    ; cnt.000 ; cnt.011 ; cnt.010 ; cnt.001 ; cnt.101 ;
++---------+---------+---------+---------+---------+---------+
+; cnt.101 ; 0       ; 0       ; 0       ; 0       ; 0       ;
+; cnt.001 ; 0       ; 0       ; 0       ; 1       ; 1       ;
+; cnt.010 ; 0       ; 0       ; 1       ; 0       ; 1       ;
+; cnt.011 ; 0       ; 1       ; 0       ; 0       ; 1       ;
+; cnt.000 ; 1       ; 0       ; 0       ; 0       ; 1       ;
++---------+---------+---------+---------+---------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                        ;
++----------------------------------------------------+----------------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                          ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------------------------------+------------------------+
+; segments_controller:inst|bcd_7seg:inst5|display[6] ; segments_controller:inst|bcd_7seg:inst5|Mux7 ; yes                    ;
+; segments_controller:inst|bcd_7seg:inst5|display[5] ; segments_controller:inst|bcd_7seg:inst5|Mux7 ; yes                    ;
+; segments_controller:inst|bcd_7seg:inst5|display[4] ; segments_controller:inst|bcd_7seg:inst5|Mux7 ; yes                    ;
+; segments_controller:inst|bcd_7seg:inst5|display[3] ; segments_controller:inst|bcd_7seg:inst5|Mux7 ; yes                    ;
+; segments_controller:inst|bcd_7seg:inst5|display[2] ; segments_controller:inst|bcd_7seg:inst5|Mux7 ; yes                    ;
+; segments_controller:inst|bcd_7seg:inst5|display[1] ; segments_controller:inst|bcd_7seg:inst5|Mux7 ; yes                    ;
+; segments_controller:inst|bcd_7seg:inst5|display[0] ; segments_controller:inst|bcd_7seg:inst5|Mux7 ; yes                    ;
+; Number of user-specified and inferred latches = 7  ;                                              ;                        ;
++----------------------------------------------------+----------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                              ;
++-----------------------------------------------------------+-----------------------------------------------------+
+; Register name                                             ; Reason for Removal                                  ;
++-----------------------------------------------------------+-----------------------------------------------------+
+; lm75:inst7|I2C_READ:I2C_READ|address_reg[7]               ; Stuck at VCC due to stuck port data_in              ;
+; lm75:inst7|I2C_READ:I2C_READ|address_reg[5,6]             ; Stuck at GND due to stuck port data_in              ;
+; lm75:inst7|I2C_READ:I2C_READ|address_reg[4]               ; Stuck at VCC due to stuck port data_in              ;
+; lm75:inst7|I2C_READ:I2C_READ|address_reg[1..3]            ; Stuck at GND due to stuck port data_in              ;
+; lm75:inst7|I2C_READ:I2C_READ|address_reg[0]               ; Stuck at VCC due to stuck port data_in              ;
+; lm75:inst7|I2C_READ:I2C_READ|cnt.101                      ; Lost fanout                                         ;
+; lm75:inst7|I2C_READ:I2C_READ|state~14                     ; Lost fanout                                         ;
+; lm75:inst7|I2C_READ:I2C_READ|cnt~4                        ; Lost fanout                                         ;
+; lm75:inst7|I2C_READ:I2C_READ|cnt~5                        ; Lost fanout                                         ;
+; lm75:inst7|I2C_READ:I2C_READ|timer_cnt[0]                 ; Merged with lm75:inst7|I2C_READ:I2C_READ|scl_cnt[0] ;
+; segments_controller:inst|refresh_clock_10kHz:inst|cont[0] ; Merged with lm75:inst7|I2C_READ:I2C_READ|scl_cnt[0] ;
+; lcd:inst8|count[0]                                        ; Merged with lm75:inst7|I2C_READ:I2C_READ|scl_cnt[0] ;
+; lcd:inst8|count[1]                                        ; Merged with lm75:inst7|I2C_READ:I2C_READ|scl_cnt[1] ;
+; segments_controller:inst|refresh_clock_10kHz:inst|cont[1] ; Merged with lm75:inst7|I2C_READ:I2C_READ|scl_cnt[1] ;
+; lm75:inst7|I2C_READ:I2C_READ|timer_cnt[1]                 ; Merged with lm75:inst7|I2C_READ:I2C_READ|scl_cnt[1] ;
+; lm75:inst7|I2C_READ:I2C_READ|timer_cnt[2]                 ; Merged with lcd:inst8|count[2]                      ;
+; lcd:inst8|count[2]                                        ; Merged with lm75:inst7|I2C_READ:I2C_READ|scl_cnt[2] ;
+; lm75:inst7|I2C_READ:I2C_READ|timer_cnt[3]                 ; Merged with lcd:inst8|count[3]                      ;
+; Total Number of Removed Registers = 21                    ;                                                     ;
++-----------------------------------------------------------+-----------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 186   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 30    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |test|buzzer_controller:instX|cont[8]                 ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |test|lm75:inst7|I2C_READ:I2C_READ|data_cnt[3]        ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |test|segments_controller:inst|bcd_control:inst3|Mux3 ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |test|segments_controller:inst|bcd_control:inst3|Mux2 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lm75:inst7|I2C_READ:I2C_READ ;
++----------------+-----------+----------------------------------------------+
+; Parameter Name ; Value     ; Type                                         ;
++----------------+-----------+----------------------------------------------+
+; IDLE           ; 000000000 ; Unsigned Binary                              ;
+; START          ; 000000010 ; Unsigned Binary                              ;
+; ADDRESS        ; 000000100 ; Unsigned Binary                              ;
+; ACK1           ; 000001000 ; Unsigned Binary                              ;
+; READ1          ; 000010000 ; Unsigned Binary                              ;
+; ACK2           ; 000100000 ; Unsigned Binary                              ;
+; READ2          ; 001000000 ; Unsigned Binary                              ;
+; NACK           ; 010000000 ; Unsigned Binary                              ;
+; STOP           ; 100000000 ; Unsigned Binary                              ;
++----------------+-----------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: lcd:inst8 ;
++----------------+----------+----------------------------+
+; Parameter Name ; Value    ; Type                       ;
++----------------+----------+----------------------------+
+; fclk           ; 50000000 ; Signed Integer             ;
++----------------+----------+----------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_hhm ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod1 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_k9m ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod0 ;
++------------------------+----------------+-----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                          ;
++------------------------+----------------+-----------------------------------------------+
+; LPM_WIDTHN             ; 6              ; Untyped                                       ;
+; LPM_WIDTHD             ; 4              ; Untyped                                       ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                       ;
+; LPM_PIPELINE           ; 0              ; Untyped                                       ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                       ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                       ;
+; CBXI_PARAMETER         ; lpm_divide_k9m ; Untyped                                       ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                       ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                       ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                    ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                  ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                  ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                ;
++------------------------+----------------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 27                          ;
+; cycloneiii_ff         ; 186                         ;
+;     ENA               ; 30                          ;
+;     plain             ; 156                         ;
+; cycloneiii_io_obuf    ; 2                           ;
+; cycloneiii_lcell_comb ; 410                         ;
+;     arith             ; 129                         ;
+;         2 data inputs ; 112                         ;
+;         3 data inputs ; 17                          ;
+;     normal            ; 281                         ;
+;         0 data inputs ; 7                           ;
+;         1 data inputs ; 19                          ;
+;         2 data inputs ; 75                          ;
+;         3 data inputs ; 30                          ;
+;         4 data inputs ; 150                         ;
+;                       ;                             ;
+; Max LUT depth         ; 10.10                       ;
+; Average LUT depth     ; 5.07                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
+    Info: Processing started: Sat Aug 28 19:08:35 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Temperature_Monitor -c Temperature_Monitor
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file contador.v
+    Info (12023): Found entity 1: contador File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/contador.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file refresh_clock_10khz.v
+    Info (12023): Found entity 1: refresh_clock_10kHz File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_clock_10kHz.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file refresh_counter.v
+    Info (12023): Found entity 1: refresh_counter File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file anode_control.v
+    Info (12023): Found entity 1: anode_control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/anode_control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_control.v
+    Info (12023): Found entity 1: bcd_control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_control.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_7seg.v
+    Info (12023): Found entity 1: bcd_7seg File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file segments_controller.bdf
+    Info (12023): Found entity 1: segments_controller
+Info (12021): Found 1 design units, including 1 entities, in source file clock_1hz.v
+    Info (12023): Found entity 1: clock_1Hz File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/clock_1Hz.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file test.bdf
+    Info (12023): Found entity 1: test
+Info (12021): Found 1 design units, including 1 entities, in source file i2c_read.v
+    Info (12023): Found entity 1: I2C_READ File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/I2C_READ.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file lm75.v
+    Info (12023): Found entity 1: lm75 File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lm75.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file seg_d.v
+    Info (12023): Found entity 1: SEG_D File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 1
+Info (12021): Found 2 design units, including 1 entities, in source file lcd.vhd
+    Info (12022): Found design unit 1: lcd-hardware File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd.vhd Line: 36
+    Info (12023): Found entity 1: lcd File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd.vhd Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file lcd_controller.v
+    Info (12023): Found entity 1: lcd_controller File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file buzzer_controller.v
+    Info (12023): Found entity 1: buzzer_controller File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 1
+Info (12127): Elaborating entity "test" for the top level hierarchy
+Warning (275080): Converted elements in bus name "DB" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "DB[7..0]" to "DB7..0"
+    Warning (275081): Converted element name(s) from "DB[0]" to "DB0"
+    Warning (275081): Converted element name(s) from "DB[1]" to "DB1"
+    Warning (275081): Converted element name(s) from "DB[2]" to "DB2"
+    Warning (275081): Converted element name(s) from "DB[3]" to "DB3"
+    Warning (275081): Converted element name(s) from "DB[4]" to "DB4"
+    Warning (275081): Converted element name(s) from "DB[5]" to "DB5"
+    Warning (275081): Converted element name(s) from "DB[6]" to "DB6"
+    Warning (275081): Converted element name(s) from "DB[7]" to "DB7"
+Info (12128): Elaborating entity "segments_controller" for hierarchy "segments_controller:inst"
+Warning (275083): Bus "display1[0]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display1[1]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display1[2]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display1[3]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display2[0]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display2[1]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display2[2]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display2[3]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display3[0]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display3[1]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display3[2]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display3[3]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display1[3..0]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display2[3..0]" found using same base name as "display", which might lead to a name conflict.
+Warning (275083): Bus "display3[3..0]" found using same base name as "display", which might lead to a name conflict.
+Warning (275080): Converted elements in bus name "display" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "display[6..0]" to "display6..0"
+    Warning (275081): Converted element name(s) from "display[3]" to "display3"
+    Warning (275081): Converted element name(s) from "display[2]" to "display2"
+    Warning (275081): Converted element name(s) from "display[1]" to "display1"
+    Warning (275081): Converted element name(s) from "display[0]" to "display0"
+    Warning (275081): Converted element name(s) from "display[5]" to "display5"
+    Warning (275081): Converted element name(s) from "display[4]" to "display4"
+    Warning (275081): Converted element name(s) from "display[6]" to "display6"
+Warning (275080): Converted elements in bus name "display1" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "display1[0]" to "display10"
+    Warning (275081): Converted element name(s) from "display1[1]" to "display11"
+    Warning (275081): Converted element name(s) from "display1[2]" to "display12"
+    Warning (275081): Converted element name(s) from "display1[3]" to "display13"
+    Warning (275081): Converted element name(s) from "display1[3..0]" to "display13..0"
+Warning (275080): Converted elements in bus name "display2" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "display2[0]" to "display20"
+    Warning (275081): Converted element name(s) from "display2[1]" to "display21"
+    Warning (275081): Converted element name(s) from "display2[2]" to "display22"
+    Warning (275081): Converted element name(s) from "display2[3]" to "display23"
+    Warning (275081): Converted element name(s) from "display2[3..0]" to "display23..0"
+Warning (275080): Converted elements in bus name "display3" using legacy naming rules. Make any assignments on the new names, not on the original names.
+    Warning (275081): Converted element name(s) from "display3[0]" to "display30"
+    Warning (275081): Converted element name(s) from "display3[1]" to "display31"
+    Warning (275081): Converted element name(s) from "display3[2]" to "display32"
+    Warning (275081): Converted element name(s) from "display3[3]" to "display33"
+    Warning (275081): Converted element name(s) from "display3[3..0]" to "display33..0"
+Info (12128): Elaborating entity "anode_control" for hierarchy "segments_controller:inst|anode_control:inst2"
+Info (12128): Elaborating entity "refresh_counter" for hierarchy "segments_controller:inst|refresh_counter:inst1"
+Warning (10230): Verilog HDL assignment warning at refresh_counter.v(9): truncated value with size 32 to match size of target (2) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_counter.v Line: 9
+Info (12128): Elaborating entity "refresh_clock_10kHz" for hierarchy "segments_controller:inst|refresh_clock_10kHz:inst"
+Warning (10230): Verilog HDL assignment warning at refresh_clock_10kHz.v(14): truncated value with size 32 to match size of target (12) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_clock_10kHz.v Line: 14
+Info (12128): Elaborating entity "bcd_7seg" for hierarchy "segments_controller:inst|bcd_7seg:inst5"
+Warning (10270): Verilog HDL Case Statement warning at bcd_7seg.v(10): incomplete case statement has no default case item File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 10
+Warning (10235): Verilog HDL Always Construct warning at bcd_7seg.v(23): variable "dot" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 23
+Warning (10240): Verilog HDL Always Construct warning at bcd_7seg.v(8): inferring latch(es) for variable "display", which holds its previous value in one or more paths through the always construct File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+Info (10041): Inferred latch for "display[0]" at bcd_7seg.v(8) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+Info (10041): Inferred latch for "display[1]" at bcd_7seg.v(8) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+Info (10041): Inferred latch for "display[2]" at bcd_7seg.v(8) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+Info (10041): Inferred latch for "display[3]" at bcd_7seg.v(8) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+Info (10041): Inferred latch for "display[4]" at bcd_7seg.v(8) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+Info (10041): Inferred latch for "display[5]" at bcd_7seg.v(8) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+Info (10041): Inferred latch for "display[6]" at bcd_7seg.v(8) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+Info (12128): Elaborating entity "bcd_control" for hierarchy "segments_controller:inst|bcd_control:inst3"
+Warning (10235): Verilog HDL Always Construct warning at bcd_control.v(15): variable "display1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_control.v Line: 15
+Warning (10235): Verilog HDL Always Construct warning at bcd_control.v(16): variable "display2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_control.v Line: 16
+Warning (10235): Verilog HDL Always Construct warning at bcd_control.v(17): variable "display3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_control.v Line: 17
+Warning (10235): Verilog HDL Always Construct warning at bcd_control.v(18): variable "display4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_control.v Line: 18
+Info (12128): Elaborating entity "lm75" for hierarchy "lm75:inst7"
+Info (12128): Elaborating entity "I2C_READ" for hierarchy "lm75:inst7|I2C_READ:I2C_READ" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lm75.v Line: 21
+Warning (10230): Verilog HDL assignment warning at I2C_READ.v(94): truncated value with size 15 to match size of target (8) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/I2C_READ.v Line: 94
+Warning (10272): Verilog HDL Case Statement warning at I2C_READ.v(138): case item expression covers a value already covered by a previous case item File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/I2C_READ.v Line: 138
+Info (12128): Elaborating entity "SEG_D" for hierarchy "lm75:inst7|SEG_D:SEG_D" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lm75.v Line: 32
+Warning (10230): Verilog HDL assignment warning at SEG_D.v(31): truncated value with size 32 to match size of target (17) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 31
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(59): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 59
+Warning (10230): Verilog HDL assignment warning at SEG_D.v(59): truncated value with size 32 to match size of target (8) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 59
+Warning (10230): Verilog HDL assignment warning at SEG_D.v(62): truncated value with size 32 to match size of target (4) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 62
+Warning (10230): Verilog HDL assignment warning at SEG_D.v(63): truncated value with size 32 to match size of target (4) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(65): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 65
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(72): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 72
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(74): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 74
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(76): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 76
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(84): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 84
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(85): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 85
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(86): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 86
+Warning (10240): Verilog HDL Always Construct warning at SEG_D.v(55): inferring latch(es) for variable "lcd_sel", which holds its previous value in one or more paths through the always construct File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 55
+Info (10041): Inferred latch for "lcd_sel[0]" at SEG_D.v(74) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 74
+Info (10041): Inferred latch for "lcd_sel[1]" at SEG_D.v(74) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 74
+Info (12128): Elaborating entity "lcd" for hierarchy "lcd:inst8"
+Warning (10492): VHDL Process Statement warning at lcd.vhd(286): signal "D1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd.vhd Line: 286
+Warning (10492): VHDL Process Statement warning at lcd.vhd(291): signal "D2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd.vhd Line: 291
+Warning (10492): VHDL Process Statement warning at lcd.vhd(296): signal "D3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd.vhd Line: 296
+Warning (10492): VHDL Process Statement warning at lcd.vhd(301): signal "D4" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd.vhd Line: 301
+Warning (10492): VHDL Process Statement warning at lcd.vhd(306): signal "D5" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd.vhd Line: 306
+Warning (10492): VHDL Process Statement warning at lcd.vhd(311): signal "D6" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd.vhd Line: 311
+Info (12128): Elaborating entity "lcd_controller" for hierarchy "lcd_controller:inst6"
+Warning (10270): Verilog HDL Case Statement warning at lcd_controller.v(8): incomplete case statement has no default case item File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 8
+Warning (10240): Verilog HDL Always Construct warning at lcd_controller.v(6): inferring latch(es) for variable "D1", which holds its previous value in one or more paths through the always construct File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (10240): Verilog HDL Always Construct warning at lcd_controller.v(6): inferring latch(es) for variable "D2", which holds its previous value in one or more paths through the always construct File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (10240): Verilog HDL Always Construct warning at lcd_controller.v(6): inferring latch(es) for variable "D3", which holds its previous value in one or more paths through the always construct File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (10240): Verilog HDL Always Construct warning at lcd_controller.v(6): inferring latch(es) for variable "D4", which holds its previous value in one or more paths through the always construct File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (10240): Verilog HDL Always Construct warning at lcd_controller.v(6): inferring latch(es) for variable "D5", which holds its previous value in one or more paths through the always construct File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (10240): Verilog HDL Always Construct warning at lcd_controller.v(6): inferring latch(es) for variable "D6", which holds its previous value in one or more paths through the always construct File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D6[0]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D6[1]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D6[2]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D6[3]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D6[4]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D6[5]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D6[6]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D6[7]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D5[0]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D5[1]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D5[2]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D5[3]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D5[4]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D5[5]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D5[6]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D5[7]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D4[0]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D4[1]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D4[2]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D4[3]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D4[4]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D4[5]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D4[6]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D4[7]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D3[0]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D3[1]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D3[2]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D3[3]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D3[4]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D3[5]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D3[6]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D3[7]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D2[0]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D2[1]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D2[2]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D2[3]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D2[4]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D2[5]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D2[6]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D2[7]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D1[0]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D1[1]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D1[2]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D1[3]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D1[4]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D1[5]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D1[6]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (10041): Inferred latch for "D1[7]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Info (12128): Elaborating entity "buzzer_controller" for hierarchy "buzzer_controller:instX"
+Warning (10230): Verilog HDL assignment warning at buzzer_controller.v(24): truncated value with size 32 to match size of target (26) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 24
+Warning (10230): Verilog HDL assignment warning at buzzer_controller.v(33): truncated value with size 32 to match size of target (26) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 33
+Warning (10230): Verilog HDL assignment warning at buzzer_controller.v(74): truncated value with size 32 to match size of target (1) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 74
+Warning (10270): Verilog HDL Case Statement warning at buzzer_controller.v(71): incomplete case statement has no default case item File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 71
+Warning (10240): Verilog HDL Always Construct warning at buzzer_controller.v(69): inferring latch(es) for variable "flag", which holds its previous value in one or more paths through the always construct File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 69
+Info (10041): Inferred latch for "flag" at buzzer_controller.v(69) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 69
+Warning (14026): LATCH primitive "lcd_controller:inst6|D1[0]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D2[0]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D3[0]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D4[0]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D5[0]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D6[0]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D1[1]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D2[1]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D3[1]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D4[1]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D1[2]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D2[2]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D3[2]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D5[2]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D6[2]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D1[3]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D2[3]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D3[3]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D6[3]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D1[4]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D2[4]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D3[4]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D5[4]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D5[5]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D6[5]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D5[6]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "lcd_controller:inst6|D6[6]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
+Warning (14026): LATCH primitive "buzzer_controller:instX|flag" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 9
+Info (278001): Inferred 3 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "lm75:inst7|SEG_D:SEG_D|Div0" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "lm75:inst7|SEG_D:SEG_D|Mod1" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "lm75:inst7|SEG_D:SEG_D|Mod0" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 62
+Info (12130): Elaborated megafunction instantiation "lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
+Info (12133): Instantiated megafunction "lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0" with the following parameter: File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_hhm.tdf
+    Info (12023): Found entity 1: lpm_divide_hhm File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/lpm_divide_hhm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9kh File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/sign_div_unsign_9kh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_64f.tdf
+    Info (12023): Found entity 1: alt_u_div_64f File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/alt_u_div_64f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/add_sub_7pc.tdf Line: 23
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod1" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
+Info (12133): Instantiated megafunction "lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod1" with the following parameter: File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
+    Info (12134): Parameter "LPM_WIDTHN" = "6"
+    Info (12134): Parameter "LPM_WIDTHD" = "4"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_k9m.tdf
+    Info (12023): Found entity 1: lpm_divide_k9m File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/lpm_divide_k9m.tdf Line: 25
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "E_pin" and its non-tri-state driver.
+Warning (13012): Latch segments_controller:inst|bcd_7seg:inst5|display[6] has unsafe behavior File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal segments_controller:inst|refresh_counter:inst1|out[1] File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_counter.v Line: 6
+Warning (13012): Latch segments_controller:inst|bcd_7seg:inst5|display[5] has unsafe behavior File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal segments_controller:inst|refresh_counter:inst1|out[1] File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_counter.v Line: 6
+Warning (13012): Latch segments_controller:inst|bcd_7seg:inst5|display[4] has unsafe behavior File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal segments_controller:inst|refresh_counter:inst1|out[1] File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_counter.v Line: 6
+Warning (13012): Latch segments_controller:inst|bcd_7seg:inst5|display[3] has unsafe behavior File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal segments_controller:inst|refresh_counter:inst1|out[1] File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_counter.v Line: 6
+Warning (13012): Latch segments_controller:inst|bcd_7seg:inst5|display[2] has unsafe behavior File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal segments_controller:inst|refresh_counter:inst1|out[1] File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_counter.v Line: 6
+Warning (13012): Latch segments_controller:inst|bcd_7seg:inst5|display[1] has unsafe behavior File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal segments_controller:inst|refresh_counter:inst1|out[1] File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_counter.v Line: 6
+Warning (13012): Latch segments_controller:inst|bcd_7seg:inst5|display[0] has unsafe behavior File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 8
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal segments_controller:inst|refresh_counter:inst1|out[1] File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_counter.v Line: 6
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "E_pin~synth"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Rw" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 503 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 24 output pins
+    Info (21060): Implemented 2 bidirectional pins
+    Info (21061): Implemented 476 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 143 warnings
+    Info: Peak virtual memory: 657 megabytes
+    Info: Processing ended: Sat Aug 28 19:08:47 2021
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:23
+
+
