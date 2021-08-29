@@ -19,40 +19,53 @@ module buzzer_controller(estado,clk,sinal);
 	
 	always @(posedge clk)
 	begin
-		if(flag == 0) //Frio
+		if(estado == 0) //Frio
 		begin
-			cont = cont + 1;
-			if(cont == 50_000_000)
-			begin
-				aciona = ~aciona;
-				cont = 0;
-			end
 			
+			if(cont < 50_000_000)
+			begin
+				cont = cont + 1;
+				aciona = 0;
+			end
+			else if(cont <= 55_000_000)
+			begin
+				aciona = 1;
+				cont = cont + 1;
+			end
+			else
+				cont = 0;
+									
 			if(aciona == 1)
 			begin
 				cont2 = cont2 + 1;
 				
-				if(cont2 == 5_000_000)
+				if(cont2 == 5_000_00)
 				begin
 					sinal = ~sinal;
 					cont2 = 0;
 				end
 			end
 		end
-		else if(flag == 2) //Quente
+		else if(estado == 2) //Quente
 		begin
-			cont = cont + 1;
-			if(cont == 12_500_000)
+			if(cont < 12_500_000)
 			begin
-				aciona = ~aciona;
-				cont = 0;
+				cont = cont + 1;
+				aciona = 0;
 			end
+			else if(cont <= 17_500_000)
+			begin
+				aciona = 1;
+				cont = cont + 1;
+			end
+			else
+				cont = 0;
 			
 			if(aciona == 1)
 			begin
 				cont2 = cont2 + 1;
 				
-				if(cont2 == 5_000_000)
+				if(cont2 == 5_000)
 				begin
 					sinal = ~sinal;
 					cont2 = 0;
@@ -63,16 +76,8 @@ module buzzer_controller(estado,clk,sinal);
 		begin
 			sinal = 0;
 			cont = 0;
+			cont2 = 0;
 		end
-	end
-		
-	always @(estado)
-	begin
-		case(estado)
-			0: flag = 0;
-			1: flag = 1;
-			2: flag = 2;
-		endcase		
 	end
 	
 endmodule

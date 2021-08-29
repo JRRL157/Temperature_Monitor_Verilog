@@ -1,5 +1,5 @@
 Flow report for Temperature_Monitor
-Sat Aug 28 19:08:59 2021
+Sat Aug 28 21:06:01 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Aug 28 19:08:56 2021       ;
+; Flow Status                        ; Successful - Sat Aug 28 21:05:58 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; Temperature_Monitor                         ;
 ; Top-level Entity Name              ; test                                        ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C8                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 425 / 6,272 ( 7 % )                         ;
-;     Total combinational functions  ; 398 / 6,272 ( 6 % )                         ;
+; Total logic elements               ; 450 / 6,272 ( 7 % )                         ;
+;     Total combinational functions  ; 424 / 6,272 ( 7 % )                         ;
 ;     Dedicated logic registers      ; 186 / 6,272 ( 3 % )                         ;
 ; Total registers                    ; 186                                         ;
 ; Total pins                         ; 27 / 92 ( 29 % )                            ;
@@ -65,7 +65,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 08/28/2021 19:08:35 ;
+; Start date & time ; 08/28/2021 21:05:32 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Temperature_Monitor ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value       ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 11960136588300.163018851508884         ; --                  ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 11960136588300.163019553209944         ; --                  ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --                  ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --                  ; --          ; --         ;
 ; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --                  ; --          ; --         ;
@@ -93,11 +93,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 657 MB              ; 00:00:23                           ;
-; Fitter               ; 00:00:06     ; 1.0                     ; 1292 MB             ; 00:00:08                           ;
+; Analysis & Synthesis ; 00:00:14     ; 1.0                     ; 658 MB              ; 00:00:26                           ;
+; Fitter               ; 00:00:08     ; 1.0                     ; 1296 MB             ; 00:00:09                           ;
 ; Assembler            ; 00:00:01     ; 1.0                     ; 554 MB              ; 00:00:01                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 623 MB              ; 00:00:02                           ;
-; Total                ; 00:00:20     ; --                      ; --                  ; 00:00:34                           ;
+; Timing Analyzer      ; 00:00:02     ; 1.1                     ; 622 MB              ; 00:00:02                           ;
+; Total                ; 00:00:25     ; --                      ; --                  ; 00:00:38                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

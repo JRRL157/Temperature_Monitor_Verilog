@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Temperature_Monitor
-Sat Aug 28 19:08:47 2021
+Sat Aug 28 21:05:46 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -54,13 +54,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Aug 28 19:08:47 2021       ;
+; Analysis & Synthesis Status        ; Successful - Sat Aug 28 21:05:46 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; Temperature_Monitor                         ;
 ; Top-level Entity Name              ; test                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 443                                         ;
-;     Total combinational functions  ; 397                                         ;
+; Total logic elements               ; 469                                         ;
+;     Total combinational functions  ; 423                                         ;
 ;     Dedicated logic registers      ; 186                                         ;
 ; Total registers                    ; 186                                         ;
 ; Total pins                         ; 27                                          ;
@@ -170,7 +170,7 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
+;     Processor 2            ;   0.0%      ;
 ;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
@@ -211,16 +211,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------------+
 ; Resource                                    ; Usage             ;
 +---------------------------------------------+-------------------+
-; Estimated Total logic elements              ; 443               ;
+; Estimated Total logic elements              ; 469               ;
 ;                                             ;                   ;
-; Total combinational functions               ; 397               ;
+; Total combinational functions               ; 423               ;
 ; Logic element usage by number of LUT inputs ;                   ;
-;     -- 4 input functions                    ; 150               ;
-;     -- 3 input functions                    ; 47                ;
-;     -- <=2 input functions                  ; 200               ;
+;     -- 4 input functions                    ; 156               ;
+;     -- 3 input functions                    ; 48                ;
+;     -- <=2 input functions                  ; 219               ;
 ;                                             ;                   ;
 ; Logic elements by mode                      ;                   ;
-;     -- normal mode                          ; 268               ;
+;     -- normal mode                          ; 294               ;
 ;     -- arithmetic mode                      ; 129               ;
 ;                                             ;                   ;
 ; Total registers                             ; 186               ;
@@ -233,8 +233,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                   ;
 ; Maximum fan-out node                        ; clock_50Mhz~input ;
 ; Maximum fan-out                             ; 136               ;
-; Total fan-out                               ; 1578              ;
-; Average fan-out                             ; 2.47              ;
+; Total fan-out                               ; 1669              ;
+; Average fan-out                             ; 2.51              ;
 +---------------------------------------------+-------------------+
 
 
@@ -243,12 +243,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                          ; Entity Name         ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |test                                        ; 397 (0)             ; 186 (0)                   ; 0           ; 0            ; 0       ; 0         ; 27   ; 0            ; |test                                                                                                                        ; test                ; work         ;
-;    |buzzer_controller:instX|                 ; 107 (107)           ; 54 (54)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|buzzer_controller:instX                                                                                                ; buzzer_controller   ; work         ;
+; |test                                        ; 423 (0)             ; 186 (0)                   ; 0           ; 0            ; 0       ; 0         ; 27   ; 0            ; |test                                                                                                                        ; test                ; work         ;
+;    |buzzer_controller:instX|                 ; 133 (133)           ; 54 (54)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|buzzer_controller:instX                                                                                                ; buzzer_controller   ; work         ;
 ;    |lcd:inst8|                               ; 63 (63)             ; 62 (62)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lcd:inst8                                                                                                              ; lcd                 ; work         ;
-;    |lm75:inst7|                              ; 178 (0)             ; 57 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7                                                                                                             ; lm75                ; work         ;
+;    |lm75:inst7|                              ; 177 (0)             ; 57 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7                                                                                                             ; lm75                ; work         ;
 ;       |I2C_READ:I2C_READ|                    ; 112 (112)           ; 57 (57)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|I2C_READ:I2C_READ                                                                                           ; I2C_READ            ; work         ;
-;       |SEG_D:SEG_D|                          ; 66 (6)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D                                                                                                 ; SEG_D               ; work         ;
+;       |SEG_D:SEG_D|                          ; 65 (5)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D                                                                                                 ; SEG_D               ; work         ;
 ;          |lpm_divide:Div0|                   ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;             |lpm_divide_hhm:auto_generated|  ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0|lpm_divide_hhm:auto_generated                                                   ; lpm_divide_hhm      ; work         ;
 ;                |sign_div_unsign_9kh:divider| ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0|lpm_divide_hhm:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
@@ -257,10 +257,10 @@ https://fpgasoftware.intel.com/eula.
 ;             |lpm_divide_k9m:auto_generated|  ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod0|lpm_divide_k9m:auto_generated                                                   ; lpm_divide_k9m      ; work         ;
 ;                |sign_div_unsign_9kh:divider| ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider                       ; sign_div_unsign_9kh ; work         ;
 ;                   |alt_u_div_64f:divider|    ; 30 (30)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod0|lpm_divide_k9m:auto_generated|sign_div_unsign_9kh:divider|alt_u_div_64f:divider ; alt_u_div_64f       ; work         ;
-;    |segments_controller:inst|                ; 49 (0)              ; 13 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst                                                                                               ; segments_controller ; work         ;
+;    |segments_controller:inst|                ; 50 (0)              ; 13 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst                                                                                               ; segments_controller ; work         ;
 ;       |anode_control:inst2|                  ; 3 (3)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst|anode_control:inst2                                                                           ; anode_control       ; work         ;
 ;       |bcd_7seg:inst5|                       ; 15 (15)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst|bcd_7seg:inst5                                                                                ; bcd_7seg            ; work         ;
-;       |bcd_control:inst3|                    ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst|bcd_control:inst3                                                                             ; bcd_control         ; work         ;
+;       |bcd_control:inst3|                    ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst|bcd_control:inst3                                                                             ; bcd_control         ; work         ;
 ;       |refresh_clock_10kHz:inst|             ; 21 (21)             ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst|refresh_clock_10kHz:inst                                                                      ; refresh_clock_10kHz ; work         ;
 ;       |refresh_counter:inst1|                ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|segments_controller:inst|refresh_counter:inst1                                                                         ; refresh_counter     ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
@@ -406,7 +406,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 ; Total registers                              ; 186   ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Clear  ; 26    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -420,7 +420,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |test|buzzer_controller:instX|cont[8]                 ;
+; 5:1                ; 26 bits   ; 78 LEs        ; 26 LEs               ; 52 LEs                 ; Yes        ; |test|buzzer_controller:instX|cont[14]                ;
+; 7:1                ; 26 bits   ; 104 LEs       ; 26 LEs               ; 78 LEs                 ; Yes        ; |test|buzzer_controller:instX|cont2[14]               ;
 ; 9:1                ; 4 bits    ; 24 LEs        ; 4 LEs                ; 20 LEs                 ; Yes        ; |test|lm75:inst7|I2C_READ:I2C_READ|data_cnt[3]        ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |test|segments_controller:inst|bcd_control:inst3|Mux3 ;
 ; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |test|segments_controller:inst|bcd_control:inst3|Mux2 ;
@@ -532,21 +533,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 27                          ;
 ; cycloneiii_ff         ; 186                         ;
 ;     ENA               ; 30                          ;
-;     plain             ; 156                         ;
+;     SCLR              ; 26                          ;
+;     plain             ; 130                         ;
 ; cycloneiii_io_obuf    ; 2                           ;
-; cycloneiii_lcell_comb ; 410                         ;
+; cycloneiii_lcell_comb ; 436                         ;
 ;     arith             ; 129                         ;
 ;         2 data inputs ; 112                         ;
 ;         3 data inputs ; 17                          ;
-;     normal            ; 281                         ;
+;     normal            ; 307                         ;
 ;         0 data inputs ; 7                           ;
 ;         1 data inputs ; 19                          ;
-;         2 data inputs ; 75                          ;
-;         3 data inputs ; 30                          ;
-;         4 data inputs ; 150                         ;
+;         2 data inputs ; 94                          ;
+;         3 data inputs ; 31                          ;
+;         4 data inputs ; 156                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 10.10                       ;
-; Average LUT depth     ; 5.07                        ;
+; Average LUT depth     ; 5.23                        ;
 +-----------------------+-----------------------------+
 
 
@@ -565,7 +567,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Aug 28 19:08:35 2021
+    Info: Processing started: Sat Aug 28 21:05:32 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Temperature_Monitor -c Temperature_Monitor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -759,12 +761,13 @@ Info (10041): Inferred latch for "D1[5]" at lcd_controller.v(6) File: D:/GitHub/
 Info (10041): Inferred latch for "D1[6]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
 Info (10041): Inferred latch for "D1[7]" at lcd_controller.v(6) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
 Info (12128): Elaborating entity "buzzer_controller" for hierarchy "buzzer_controller:instX"
-Warning (10230): Verilog HDL assignment warning at buzzer_controller.v(24): truncated value with size 32 to match size of target (26) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 24
+Warning (10036): Verilog HDL or VHDL warning at buzzer_controller.v(9): object "flag" assigned a value but never read File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 9
+Warning (10230): Verilog HDL assignment warning at buzzer_controller.v(27): truncated value with size 32 to match size of target (26) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 27
 Warning (10230): Verilog HDL assignment warning at buzzer_controller.v(33): truncated value with size 32 to match size of target (26) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 33
-Warning (10230): Verilog HDL assignment warning at buzzer_controller.v(74): truncated value with size 32 to match size of target (1) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 74
-Warning (10270): Verilog HDL Case Statement warning at buzzer_controller.v(71): incomplete case statement has no default case item File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 71
-Warning (10240): Verilog HDL Always Construct warning at buzzer_controller.v(69): inferring latch(es) for variable "flag", which holds its previous value in one or more paths through the always construct File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 69
-Info (10041): Inferred latch for "flag" at buzzer_controller.v(69) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 69
+Warning (10230): Verilog HDL assignment warning at buzzer_controller.v(40): truncated value with size 32 to match size of target (26) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 40
+Warning (10230): Verilog HDL assignment warning at buzzer_controller.v(53): truncated value with size 32 to match size of target (26) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 53
+Warning (10230): Verilog HDL assignment warning at buzzer_controller.v(59): truncated value with size 32 to match size of target (26) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 59
+Warning (10230): Verilog HDL assignment warning at buzzer_controller.v(66): truncated value with size 32 to match size of target (26) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 66
 Warning (14026): LATCH primitive "lcd_controller:inst6|D1[0]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
 Warning (14026): LATCH primitive "lcd_controller:inst6|D2[0]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
 Warning (14026): LATCH primitive "lcd_controller:inst6|D3[0]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
@@ -792,7 +795,6 @@ Warning (14026): LATCH primitive "lcd_controller:inst6|D5[5]" is permanently ena
 Warning (14026): LATCH primitive "lcd_controller:inst6|D6[5]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
 Warning (14026): LATCH primitive "lcd_controller:inst6|D5[6]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
 Warning (14026): LATCH primitive "lcd_controller:inst6|D6[6]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
-Warning (14026): LATCH primitive "buzzer_controller:instX|flag" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/buzzer_controller.v Line: 9
 Info (278001): Inferred 3 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "lm75:inst7|SEG_D:SEG_D|Div0" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "lm75:inst7|SEG_D:SEG_D|Mod1" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
@@ -845,15 +847,15 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 503 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 511 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 24 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 476 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 143 warnings
-    Info: Peak virtual memory: 657 megabytes
-    Info: Processing ended: Sat Aug 28 19:08:47 2021
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:23
+    Info (21061): Implemented 484 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 144 warnings
+    Info: Peak virtual memory: 658 megabytes
+    Info: Processing ended: Sat Aug 28 21:05:46 2021
+    Info: Elapsed time: 00:00:14
+    Info: Total CPU time (on all processors): 00:00:26
 
 

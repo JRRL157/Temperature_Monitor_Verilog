@@ -638,10 +638,10 @@ D6[7] <= <GND>
 
 
 |test|buzzer_controller:instX
-estado[0] => Mux1.IN5
-estado[0] => Mux0.IN5
-estado[1] => Mux1.IN4
-estado[1] => Mux0.IN4
+estado[0] => Equal0.IN31
+estado[0] => Equal2.IN31
+estado[1] => Equal0.IN30
+estado[1] => Equal2.IN0
 clk => sinal~reg0.CLK
 clk => cont2[0].CLK
 clk => cont2[1].CLK
