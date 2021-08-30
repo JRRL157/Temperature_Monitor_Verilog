@@ -1,9 +1,7 @@
-module lm75 (clk,rst_n,scl,sda,cs,seg,d1,d2,d3,visor_lcd);
+module lm75 (clk,rst_n,scl,sda,d1,d2,d3,visor_lcd);
 input clk,rst_n; 
 output scl;  
 inout sda;
-output[3:0] cs;  
-output[7:0] seg;
 //-----------ADICIONADOS---------
 output[3:0] d1;
 output[3:0] d2;
@@ -22,8 +20,6 @@ I2C_READ I2C_READ(
 SEG_D  SEG_D(
        .clk(clk),
 .rst_n(rst_n),
-.cs(cs),
-.seg(seg),
 .data(data),
 .dezena(d1),
 .unidade(d2),

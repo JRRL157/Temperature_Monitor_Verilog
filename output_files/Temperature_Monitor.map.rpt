@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Temperature_Monitor
-Sun Aug 29 22:06:42 2021
+Mon Aug 30 12:15:38 2021
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -54,7 +54,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Aug 29 22:06:42 2021       ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug 30 12:15:37 2021       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; Temperature_Monitor                         ;
 ; Top-level Entity Name              ; test                                        ;
@@ -567,12 +567,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sun Aug 29 22:06:23 2021
+    Info: Processing started: Mon Aug 30 12:15:09 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Temperature_Monitor -c Temperature_Monitor
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file contador.v
-    Info (12023): Found entity 1: contador File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/contador.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file refresh_clock_10khz.v
     Info (12023): Found entity 1: refresh_clock_10kHz File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/refresh_clock_10kHz.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file refresh_counter.v
@@ -585,8 +583,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file bcd_7se
     Info (12023): Found entity 1: bcd_7seg File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_7seg.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file segments_controller.bdf
     Info (12023): Found entity 1: segments_controller
-Info (12021): Found 1 design units, including 1 entities, in source file clock_1hz.v
-    Info (12023): Found entity 1: clock_1Hz File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/clock_1Hz.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file test.bdf
     Info (12023): Found entity 1: test
 Info (12021): Found 1 design units, including 1 entities, in source file i2c_read.v
@@ -678,25 +674,21 @@ Warning (10235): Verilog HDL Always Construct warning at bcd_control.v(16): vari
 Warning (10235): Verilog HDL Always Construct warning at bcd_control.v(17): variable "display3" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_control.v Line: 17
 Warning (10235): Verilog HDL Always Construct warning at bcd_control.v(18): variable "display4" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/bcd_control.v Line: 18
 Info (12128): Elaborating entity "lm75" for hierarchy "lm75:inst7"
-Info (12128): Elaborating entity "I2C_READ" for hierarchy "lm75:inst7|I2C_READ:I2C_READ" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lm75.v Line: 21
+Info (12128): Elaborating entity "I2C_READ" for hierarchy "lm75:inst7|I2C_READ:I2C_READ" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lm75.v Line: 19
 Warning (10230): Verilog HDL assignment warning at I2C_READ.v(94): truncated value with size 15 to match size of target (8) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/I2C_READ.v Line: 94
 Warning (10272): Verilog HDL Case Statement warning at I2C_READ.v(138): case item expression covers a value already covered by a previous case item File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/I2C_READ.v Line: 138
-Info (12128): Elaborating entity "SEG_D" for hierarchy "lm75:inst7|SEG_D:SEG_D" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lm75.v Line: 32
-Warning (10230): Verilog HDL assignment warning at SEG_D.v(31): truncated value with size 32 to match size of target (17) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 31
-Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(59): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 59
-Warning (10230): Verilog HDL assignment warning at SEG_D.v(59): truncated value with size 32 to match size of target (8) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 59
-Warning (10230): Verilog HDL assignment warning at SEG_D.v(62): truncated value with size 32 to match size of target (4) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 62
-Warning (10230): Verilog HDL assignment warning at SEG_D.v(63): truncated value with size 32 to match size of target (4) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
-Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(65): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 65
-Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(72): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 72
-Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(74): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 74
-Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(76): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 76
-Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(84): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 84
-Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(85): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 85
-Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(86): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 86
-Warning (10240): Verilog HDL Always Construct warning at SEG_D.v(55): inferring latch(es) for variable "lcd_sel", which holds its previous value in one or more paths through the always construct File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 55
-Info (10041): Inferred latch for "lcd_sel[0]" at SEG_D.v(74) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 74
-Info (10041): Inferred latch for "lcd_sel[1]" at SEG_D.v(74) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 74
+Info (12128): Elaborating entity "SEG_D" for hierarchy "lm75:inst7|SEG_D:SEG_D" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lm75.v Line: 28
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(20): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 20
+Warning (10230): Verilog HDL assignment warning at SEG_D.v(20): truncated value with size 32 to match size of target (8) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 20
+Warning (10230): Verilog HDL assignment warning at SEG_D.v(23): truncated value with size 32 to match size of target (4) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 23
+Warning (10230): Verilog HDL assignment warning at SEG_D.v(24): truncated value with size 32 to match size of target (4) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 24
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(26): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 26
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(33): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 33
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(35): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 35
+Warning (10235): Verilog HDL Always Construct warning at SEG_D.v(37): variable "data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 37
+Warning (10240): Verilog HDL Always Construct warning at SEG_D.v(16): inferring latch(es) for variable "lcd_sel", which holds its previous value in one or more paths through the always construct File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 16
+Info (10041): Inferred latch for "lcd_sel[0]" at SEG_D.v(35) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 35
+Info (10041): Inferred latch for "lcd_sel[1]" at SEG_D.v(35) File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 35
 Info (12128): Elaborating entity "lcd" for hierarchy "lcd:inst8"
 Warning (10492): VHDL Process Statement warning at lcd.vhd(286): signal "D1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd.vhd Line: 286
 Warning (10492): VHDL Process Statement warning at lcd.vhd(291): signal "D2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd.vhd Line: 291
@@ -796,11 +788,11 @@ Warning (14026): LATCH primitive "lcd_controller:inst6|D6[5]" is permanently ena
 Warning (14026): LATCH primitive "lcd_controller:inst6|D5[6]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
 Warning (14026): LATCH primitive "lcd_controller:inst6|D6[6]" is permanently enabled File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/lcd_controller.v Line: 6
 Info (278001): Inferred 3 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "lm75:inst7|SEG_D:SEG_D|Div0" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "lm75:inst7|SEG_D:SEG_D|Mod1" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "lm75:inst7|SEG_D:SEG_D|Mod0" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 62
-Info (12130): Elaborated megafunction instantiation "lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
-Info (12133): Instantiated megafunction "lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0" with the following parameter: File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "lm75:inst7|SEG_D:SEG_D|Div0" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "lm75:inst7|SEG_D:SEG_D|Mod1" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 24
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "lm75:inst7|SEG_D:SEG_D|Mod0" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 23
+Info (12130): Elaborated megafunction instantiation "lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 24
+Info (12133): Instantiated megafunction "lm75:inst7|SEG_D:SEG_D|lpm_divide:Div0" with the following parameter: File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 24
     Info (12134): Parameter "LPM_WIDTHN" = "6"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -815,8 +807,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_7pc File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/add_sub_7pc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
     Info (12023): Found entity 1: add_sub_8pc File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/db/add_sub_8pc.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod1" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
-Info (12133): Instantiated megafunction "lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod1" with the following parameter: File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 63
+Info (12130): Elaborated megafunction instantiation "lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod1" File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 24
+Info (12133): Instantiated megafunction "lm75:inst7|SEG_D:SEG_D|lpm_divide:Mod1" with the following parameter: File: D:/GitHub/Temperature_Monitor/Temperature_Monitor_Verilog/SEG_D.v Line: 24
     Info (12134): Parameter "LPM_WIDTHN" = "6"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -852,10 +844,10 @@ Info (21057): Implemented 511 device resources after synthesis - the final resou
     Info (21059): Implemented 24 output pins
     Info (21060): Implemented 2 bidirectional pins
     Info (21061): Implemented 484 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 144 warnings
-    Info: Peak virtual memory: 655 megabytes
-    Info: Processing ended: Sun Aug 29 22:06:42 2021
-    Info: Elapsed time: 00:00:19
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 140 warnings
+    Info: Peak virtual memory: 657 megabytes
+    Info: Processing ended: Mon Aug 30 12:15:38 2021
+    Info: Elapsed time: 00:00:29
     Info: Total CPU time (on all processors): 00:00:26
 
 
