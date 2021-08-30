@@ -48,15 +48,12 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
 set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
-set_global_assignment -name VERILOG_FILE contador.v
 set_global_assignment -name VERILOG_FILE refresh_clock_10kHz.v
 set_global_assignment -name VERILOG_FILE refresh_counter.v
 set_global_assignment -name VERILOG_FILE anode_control.v
 set_global_assignment -name VERILOG_FILE bcd_control.v
 set_global_assignment -name VERILOG_FILE bcd_7seg.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform7.vwf
 set_global_assignment -name BDF_FILE segments_controller.bdf
-set_global_assignment -name VERILOG_FILE clock_1Hz.v
 set_global_assignment -name BDF_FILE test.bdf
 set_location_assignment PIN_127 -to ponto
 set_location_assignment PIN_128 -to a
